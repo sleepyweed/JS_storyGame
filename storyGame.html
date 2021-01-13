@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <title>storyGame</title>
+</head>
+<body>
+  
+</body>
+<script>
+  var name;
+function yourName(){
+  swal.fire({
+    title: '今天的你適合哪張專輯？',
+    text:'請輸入名字繼續：）',
+    input: 'text',
+    inputValue: '新莊陳綺貞',
+    showLoaderOnConfirm: true,
+    confirmButtonText: '繼續前進',
+    cancelButtonText: '不告訴你',
+    showCancelButton: true,
+    allowOutsideClick: false
+  }).then(function (res){
+    if (res.dismiss === 'cancel'){  //按下按鈕後，能得到一個object。object dismiss=cancel 代表用戶按取消鍵
+      name = '三重劉德華';
+      swal.fire({
+        title: '不告訴我就不能玩囉～',
+        text: `那就叫你${name}，我們開始吧`,
+        allowOutsideClick: false,
+        // imageUrl: '',
+        imageHeight: 300
+      }).then(start);
+    }
+    else {
+      name = res.value;
+      swal.fire({
+        title: `嗨，${name}`,
+        text: '我們開始吧',
+        allowOutsideClick: false,
+        // imageUrl: '',
+        imageHeight: 300
+      }).then(start);
+    }
+  });
+}
+yourName();
+
+function start(){
+  swal.fire({
+    title: '身體',
+    text: '柔軟',
+    confirmButtonText: '融在一塊',
+    cancelButtonText: '靈肉分離',
+    showCancelButton: true,
+    allowOutsideClick: false,
+    // imageUrl: '',
+    imageHeight: 300,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33'
+    }).then(function(res){
+      if(res.dismiss === 'cancel'){
+            swal.fire({
+              title: '觸感',
+              text: '棉花',
+              confirmButtonText: '空虛',
+              cancelButtonText: '豐實',
+              showCancelButton: true,
+              allowOutsideClick: false,
+              // imageUrl: '',
+              imageHeight: 300,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33'
+            }).then(function(res){
+              if(res.dismiss === 'cancel'){
+                swal.fire({
+                  title: '適合你的專輯是',
+                  text: 'bbb',
+                  confirmButtonText: '再測一次',
+                  allowOutsideClick: false,
+                  // imageUrl: '',
+                  imageHeight: 300
+                })
+              }else{
+                swal.fire({
+                  title: '適合你的專輯是',
+                  text: 'aaa',
+                  confirmButtonText: '再測一次',
+                  allowOutsideClick: false,
+                  // imageUrl: '',
+                  imageHeight: 300
+                })
+              }
+            })
+      }else{
+        swal.fire({
+          title: '水杯',
+          text: '裝',
+          confirmButtonText: '滿到快流出來',
+          cancelButtonText: '見底',
+          showCancelButton: true,
+          allowOutsideClick: false,
+          // imageUrl: '',
+          imageHeight: 300,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33'
+        }).then(function(res){
+          if(res.dismiss === 'cancel'){
+            swal.fire({
+              title: '動物',
+              text: '叫',
+              confirmButtonText: '狂暴',
+              cancelButtonText: '柔',
+              showCancelButton: true,
+              allowOutsideClick: false,
+              // imageUrl: '',
+              imageHeight: 300,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33'
+            }).then(function(res){
+              if(res.dismiss === 'cancel'){
+                swal.fire({
+                  title: '適合你的專輯是',
+                  text: 'ddd',
+                  confirmButtonText: '再測一次',
+                  allowOutsideClick: false,
+                  // imageUrl: '',
+                  imageHeight: 300
+                })
+              }else{
+                swal.fire({
+                  title: '適合你的專輯是',
+                  text: 'ccc',
+                  confirmButtonText: '再測一次',
+                  allowOutsideClick: false,
+                  // imageUrl: '',
+                  imageHeight: 300
+                })
+              }
+            })
+          }else{
+            swal.fire({
+              title: '天氣',
+              text: '💕',
+              confirmButtonText: '壞天氣',
+              cancelButtonText: '好天氣',
+              showCancelButton: true,
+              allowOutsideClick: false,
+              // imageUrl: '',
+              imageHeight: 300,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33'
+            }).then(function(res){
+              if(res.dismiss === 'cancel'){
+                swal.fire({
+                  title: '適合你的專輯是',
+                  text: 'eee',
+                  confirmButtonText: '再測一次',
+                  allowOutsideClick: false,
+                  // imageUrl: '',
+                  imageHeight: 300
+                })
+              }else{
+                swal.fire({
+                  title: '便利商店',
+                  text: '喝飲料',
+                  confirmButtonText: '熱可可',
+                  cancelButtonText: '紅茶歐蕾',
+                  showCancelButton: true,
+                  allowOutsideClick: false,
+                  // imageUrl: '',
+                  imageHeight: 300,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33'
+                }).then(function(res){
+                  if(res.dismiss === 'cancel'){
+                    swal.fire({
+                      title: '適合你的專輯是',
+                      text: 'fff',
+                      confirmButtonText: '再測一次',
+                      allowOutsideClick: false,
+                      // imageUrl: '',
+                      imageHeight: 300
+                    })
+                  }else{
+                    swal.fire({
+                      title: '如果今天是世界末日',
+                      text: '你希望自己...',
+                      confirmButtonText: '事先知情',
+                      cancelButtonText: '到最後也不知道',
+                      showCancelButton: true,
+                      allowOutsideClick: false,
+                      // imageUrl: '',
+                      imageHeight: 300,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33'
+                    }).then(function(res){
+                      if(res.dismiss === 'cancel'){
+                        swal.fire({
+                          title: '適合你的專輯是',
+                          text: 'hhh',
+                          confirmButtonText: '再測一次',
+                          allowOutsideClick: false,
+                          // imageUrl: '',
+                          imageHeight: 300
+                        })
+                      }else{
+                        swal.fire({
+                          title: '適合你的專輯是',
+                          text: 'ggg',
+                          confirmButtonText: '再測一次',
+                          allowOutsideClick: false,
+                          // imageUrl: '',
+                          imageHeight: 300
+                        })
+                      }
+                    })
+                  }
+                })
+              }
+            })
+          }
+        })
+      }
+    })
+}
+</script>
+</html>
